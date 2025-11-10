@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trevor's Interview Tips for Construction Workers 🔨</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes swing {
+            0%, 100% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Animated background elements */
+        .construction-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .floating-tool {
+            position: absolute;
+            font-size: 2em;
+            animation: bounce 3s infinite ease-in-out;
+            opacity: 0.2;
+        }
+
+        .tool1 { top: 10%; left: 10%; animation-delay: 0s; }
+        .tool2 { top: 20%; right: 15%; animation-delay: 0.5s; }
+        .tool3 { bottom: 30%; left: 5%; animation-delay: 1s; }
+        .tool4 { bottom: 20%; right: 10%; animation-delay: 1.5s; }
+        .tool5 { top: 50%; left: 90%; animation-delay: 2s; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+            transition: filter 0.3s ease;
+        }
+
+        .container.blurred {
+            filter: blur(3px);
+            pointer-events: none;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(145deg, #FFD700, #FFA500);
+            border-radius: 25px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            margin-bottom: 30px;
+            position: relative;
+            border: 5px solid #FF6B35;
+        }
+
+        .header::before, .header::after {
+            content: "🚧";
+            position: absolute;
+            font-size: 2em;
+            animation: swing 2s infinite ease-in-out;
+        }
+
+        .header::before {
+            left: 20px;
+            top: 20px;
+        }
+
+        .header::after {
+            right: 20px;
+            top: 20px;
+            animation-delay: 1s;
+        }
+
+        h1 {
+            color: #2C3E50;
+            font-size: 2.5em;
+            text-shadow: 3px 3px 0px #FFB700;
+            margin-bottom: 10px;
+            animation: bounce 2s infinite;
+        }
+
+        .subtitle {
+            color: #34495E;
+            font-size: 1.2em;
+            background: rgba(255,255,255,0.7);
+            padding: 10px 20px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        /* Trevor Character */
+        .trevor-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .trevor {
+            display: inline-block;
+            background: #FFE4B5;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: relative;
+            margin: 0 auto;
+            animation: bounce 3s infinite;
+        }
+
+        .trevor::before {
+            content: "👷";
+            font-size: 80px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .speech-bubble {
+            background: #FFFFFF;
+            border: 3px solid #FF6B35;
+            border-radius: 20px;
+            padding: 15px;
+            margin: 20px auto;
+            max-width: 600px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .speech-bubble::after {
+            content: "";
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 20px 15px 0;
+            border-style: solid;
+            border-color: #FF6B35 transparent;
+        }
+
+        .speech-text {
+            color: #2C3E50;
+            font-size: 1.1em;
+            line-height: 1.5;
+        }
+
+        /* Video Grid */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .video-card {
+            background: linear-gradient(145deg, #FFFFFF, #F0F0F0);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            border: 3px solid #FF6B35;
+            position: relative;
+        }
+
+        .video-card:hover {
+            transform: translateY(-10px) rotate(1deg);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+
+        .video-thumbnail {
+            height: 180px;
+            background: linear-gradient(45deg, #FF6B35, #FFD700);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4em;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-thumbnail::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255,255,255,0.1) 10px,
+                rgba(255,255,255,0.1) 20px
+            );
+            animation: spin 20s linear infinite;
+        }
+
+        .video-number {
+            background: #2C3E50;
+            color: #FFD700;
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-size: 0.4em;
+            font-weight: bold;
+            z-index: 1;
+            position: relative;
+        }
+
+        .video-info {
+            padding: 15px;
+            background: #FFFFFF;
+        }
+
+        .video-title {
+            color: #2C3E50;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .video-description {
+            color: #7F8C8D;
+            font-size: 0.9em;
+        }
+
+        /* Under Construction Cards */
+        .under-construction {
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
+        .under-construction .video-thumbnail {
+            background: repeating-linear-gradient(
+                45deg,
+                #FFD700,
+                #FFD700 10px,
+                #000000 10px,
+                #000000 20px
+            );
+        }
+
+        .under-construction .construction-icon {
+            font-size: 3em;
+            animation: blink 1s infinite;
+        }
+
+        .under-construction .video-title {
+            color: #E74C3C;
+        }
+
+        /* Video Player - Theater Mode */
+        .video-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            z-index: 999;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .video-overlay.active {
+            display: block;
+        }
+
+        .video-player-container {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #FFFFFF;
+            border-radius: 20px;
+            padding: 20px;
+            max-width: 90%;
+            width: 900px;
+            max-height: 90vh;
+            z-index: 1000;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            animation: slideUp 0.4s ease;
+            overflow-y: auto;
+        }
+
+        .video-player-container.active {
+            display: block;
+        }
+
+        .video-player-container.minimized {
+            top: auto;
+            left: auto;
+            bottom: 20px;
+            right: 20px;
+            transform: none;
+            width: 400px;
+            max-width: calc(100vw - 40px);
+            animation: none;
+        }
+
+        .video-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #FF6B35;
+        }
+
+        .video-header h3 {
+            color: #2C3E50;
+            margin: 0;
+            font-size: 1.3em;
+        }
+
+        .video-controls {
+            display: flex;
+            gap: 10px;
+        }
+
+        .control-btn {
+            background: #FF6B35;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .control-btn:hover {
+            background: #E74C3C;
+            transform: scale(1.1);
+        }
+
+        .minimize-btn {
+            background: #3498db;
+        }
+
+        .minimize-btn:hover {
+            background: #2980b9;
+        }
+
+        .close-btn {
+            background: #E74C3C;
+        }
+
+        .close-btn:hover {
+            background: #C0392B;
+            transform: rotate(90deg) scale(1.1);
+        }
+
+        video {
+            width: 100%;
+            border-radius: 15px;
+            background: #000;
+            max-height: calc(90vh - 200px);
+            object-fit: contain;
+        }
+
+        .video-player-container.minimized video {
+            max-height: 225px;
+        }
+
+        .video-description-box {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #FF6B35;
+        }
+
+        .video-description-box p {
+            color: #555;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            color: white;
+        }
+
+        .safety-first {
+            display: inline-block;
+            background: #E74C3C;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            animation: blink 2s infinite;
+            margin-top: 20px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .video-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 15px;
+            }
+
+            .video-player-container {
+                width: 95%;
+                padding: 15px;
+            }
+
+            .video-player-container.minimized {
+                bottom: 10px;
+                right: 10px;
+                width: calc(100vw - 20px);
+            }
+
+            .video-header h3 {
+                font-size: 1em;
+            }
+
+            .control-btn {
+                width: 30px;
+                height: 30px;
+                font-size: 16px;
+            }
+
+            .video-description-box {
+                font-size: 0.9em;
+            }
+        }
+
+        /* Drag functionality hint */
+        .video-player-container.minimized .video-header {
+            cursor: move;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="construction-bg">
+        <div class="floating-tool tool1">🔨</div>
+        <div class="floating-tool tool2">🔧</div>
+        <div class="floating-tool tool3">⚒️</div>
+        <div class="floating-tool tool4">🪛</div>
+        <div class="floating-tool tool5">🪚</div>
+    </div>
+
+    <div class="container" id="mainContainer">
+        <!-- Header -->
+        <div class="header">
+            <h1>🏗️ Trevor's Interview Tips for Construction Workers 🏗️</h1>
+            <div class="subtitle">
+                🎬 Hidden Camera Edition - Learn What to Do from Trevor! 🎥
+            </div>
+        </div>
+
+        <!-- Trevor Section -->
+        <div class="trevor-container">
+            <div class="trevor"></div>
+            <div class="speech-bubble">
+                <div class="speech-text">
+                    "Hey there, future Construction Broncos! I'm Trevor, your Future foreman and Construction Jesus if you are lucky! 
+                    Click on any video below to see what happens in real life construction interviews! 
+                    Remember: We can fix buildings, but we can't fix bad first impressions! 😄"
+                </div>
+            </div>
+        </div>
+
+        <!-- Video Grid -->
+        <div class="video-grid">
+            <!-- Video 1 -->
+            <div class="video-card" onclick="playVideo('interview01.mp4', 'Hours Per Week', 'Watch what happens when someone brings up hours per week in an interview!')">
+                <div class="video-thumbnail">
+                    <span class="video-number">🎥 VIDEO Hours Per Week</span>
+                </div>
+                <div class="video-info">
+                    <div class="video-title">Hours Per Week</div>
+                    <div class="video-description">Watch what happens when someone brings up hours per week in an interview!</div>
+                </div>
+            </div>
+
+            <!-- Video 2 -->
+            <div class="video-card" onclick="playVideo('interview02.mp4', 'Heavy Equipment Operators', 'Find out what to do when you become certified as a Heavy Equipment Operator!')">
+                <div class="video-thumbnail">
+                    <span class="video-number">🎥 VIDEO Heavy Equipment Operators</span>
+                </div>
+                <div class="video-info">
+                    <div class="video-title">Heavy Equipment Operators</div>
+                    <div class="video-description">Find out what to do when you become certified as a Heavy Equipment Operator!</div>
+                </div>
+            </div>
+
+            <!-- Video 3 -->
+            <div class="video-card" onclick="playVideo('interview03.mp4', 'When a coworker is late', 'Find out what Trevor says to do when a coworker is late...')">
+                <div class="video-thumbnail">
+                    <span class="video-number">🎥 VIDEO When a coworker is late</span>
+                </div>
+                <div class="video-info">
+                    <div class="video-title">When a coworker is late</div>
+                    <div class="video-description">Find out what Trevor says to do when a coworker is late...</div>
+                </div>
+            </div>
+
+            <!-- Video 4 -->
+            <div class="video-card" onclick="playVideo('interview04.mp4', 'Going Home Early', 'What should you do if you want to leave early?')">
+                <div class="video-thumbnail">
+                    <span class="video-number">🎥 VIDEO Going Home Early</span>
+                </div>
+                <div class="video-info">
+                    <div class="video-title">Going Home Early</div>
+                    <div class="video-description">What should you do if you want to leave early?</div>
+                </div>
+            </div>
+
+            <!-- Video 5 -->
+            <div class="video-card" onclick="playVideo('interview05.mp4', 'Critiquing a coworker', 'Learn the right way to give feedback on the job site.')">
+                <div class="video-thumbnail">
+                    <span class="video-number">🎥 VIDEO Critiquing a coworker</span>
+                </div>
+                <div class="video-info">
+                    <div class="video-title">Critiquing a coworker</div>
+                    <div class="video-description">Learn the right way to give feedback on the job site.</div>
+                </div>
+            </div>
+
+            <!-- Video 6 -->
+            <div class="video-card" onclick="playVideo('interview06.mp4', 'How to stay safe in the summer Heat', 'How to stay safe in the summer Heat...')">
+                <div class="video-thumbnail">
+                    <span class="video-number">🎥 VIDEO How to stay safe in the summer Heat</span>
+                </div>
+                <div class="video-info">
+                    <div class="video-title">How to stay safe in the summer Heat</div>
+                    <div class="video-description">How to stay safe in the summer Heat on the job site.</div>
+                </div>
+            </div>
+
+            <!-- Under Construction 1 -->
+            <div class="video-card under-construction">
+                <div class="video-thumbnail">
+                    <span class="construction-icon">🚧</span>
+                </div>
+                <div class="video-info">
+                    <div class="video-title">UNDER CONSTRUCTION</div>
+                    <div class="video-description">Trevor is still editing this masterpiece!</div>
+                </div>
+            </div>
+
+            <!-- Under Construction 2 -->
+            <div class="video-card under-construction">
+                <div class="video-thumbnail">
+                    <span class="construction-icon">🚧</span>
+                </div>
+                <div class="video-info">
+                    <div class="video-title">COMING SOON</div>
+                    <div class="video-description">More content from Trevor on the way!</div>
+                </div>
+            </div>
+
+            <div class="video-card under-construction">
+                <div class="video-thumbnail">
+                    <span class="construction-icon">🚧</span>
+                </div>
+                <div class="video-info">
+                    <div class="video-title">UNDER CONSTRUCTION</div>
+                    <div class="video-description">More Practical Tips from Trevor is on the way!</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <h2 style="color: #FFD700; margin-bottom: 10px;">🔨 Trevor's Golden Rules 🔨</h2>
+            <p>✅ Always wear steel toe boots | ✅ Never talk, only nod | ✅ Leave home early</p>
+            <p>✅ Grin (but not too much) | ✅ Know your measurements | ✅ Never say "That's not my job"</p>
+            <div class="safety-first">⚠️ SPEEED FIRST - SAFETY SECOND! ⚠️</div>
+        </div>
+    </div>
+
+    <!-- Video Overlay (Dimmed Background) -->
+    <div class="video-overlay" id="videoOverlay" onclick="closeVideo()"></div>
+
+    <!-- Video Player Container -->
+    <div class="video-player-container" id="videoPlayerContainer">
+        <div class="video-header">
+            <h3 id="videoTitle"></h3>
+            <div class="video-controls">
+                <button class="control-btn minimize-btn" onclick="toggleMinimize()" title="Minimize to corner" id="minimizeBtn">
+                    <span id="minimizeIcon">−</span>
+                </button>
+                <button class="control-btn close-btn" onclick="closeVideo()" title="Close video">
+                    ×
+                </button>
+            </div>
+        </div>
+        <video id="videoPlayer" controls>
+            <source src="" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-description-box" id="videoDescriptionBox">
+            <p id="videoDescriptionText"></p>
+        </div>
+    </div>
+
+    <script>
+        let isMinimized = false;
+        let isDragging = false;
+        let currentX, currentY, initialX, initialY;
+
+        // Video player functionality
+        function playVideo(videoSrc, title, description) {
+            const overlay = document.getElementById('videoOverlay');
+            const container = document.getElementById('videoPlayerContainer');
+            const player = document.getElementById('videoPlayer');
+            const titleElement = document.getElementById('videoTitle');
+            const descriptionElement = document.getElementById('videoDescriptionText');
+            const mainContainer = document.getElementById('mainContainer');
+            
+            player.src = videoSrc;
+            titleElement.textContent = title;
+            descriptionElement.textContent = description;
+            
+            overlay.classList.add('active');
+            container.classList.add('active');
+            mainContainer.classList.add('blurred');
+            
+            // Reset minimized state
+            isMinimized = false;
+            container.classList.remove('minimized');
+            document.getElementById('minimizeIcon').textContent = '−';
+            
+            player.play();
+        }
+
+        function closeVideo() {
+            const overlay = document.getElementById('videoOverlay');
+            const container = document.getElementById('videoPlayerContainer');
+            const player = document.getElementById('videoPlayer');
+            const mainContainer = document.getElementById('mainContainer');
+            
+            overlay.classList.remove('active');
+            container.classList.remove('active');
+            container.classList.remove('minimized');
+            mainContainer.classList.remove('blurred');
+            
+            player.pause();
+            player.src = '';
+            isMinimized = false;
+        }
+
+        function toggleMinimize() {
+            const container = document.getElementById('videoPlayerContainer');
+            const overlay = document.getElementById('videoOverlay');
+            const mainContainer = document.getElementById('mainContainer');
+            const minimizeIcon = document.getElementById('minimizeIcon');
+            
+            isMinimized = !isMinimized;
+            
+            if (isMinimized) {
+                container.classList.add('minimized');
+                overlay.classList.remove('active');
+                mainContainer.classList.remove('blurred');
+                minimizeIcon.textContent = '□';
+            } else {
+                container.classList.remove('minimized');
+                overlay.classList.add('active');
+                mainContainer.classList.add('blurred');
+                minimizeIcon.textContent = '−';
+                // Reset position when maximizing
+                container.style.transform = '';
+            }
+        }
+
+        // Drag functionality for minimized player
+        const videoContainer = document.getElementById('videoPlayerContainer');
+        const videoHeader = videoContainer.querySelector('.video-header');
+
+        videoHeader.addEventListener('mousedown', dragStart);
+        videoHeader.addEventListener('touchstart', dragStart);
+
+        function dragStart(e) {
+            if (!isMinimized) return;
+            
+            isDragging = true;
+            
+            if (e.type === 'touchstart') {
+                initialX = e.touches[0].clientX;
+                initialY = e.touches[0].clientY;
+            } else {
+                initialX = e.clientX;
+                initialY = e.clientY;
+            }
+            
+            const rect = videoContainer.getBoundingClientRect();
+            currentX = rect.right - window.innerWidth;
+            currentY = rect.bottom - window.innerHeight;
+            
+            document.addEventListener('mousemove', drag);
+            document.addEventListener('touchmove', drag);
+            document.addEventListener('mouseup', dragEnd);
+            document.addEventListener('touchend', dragEnd);
+        }
+
+        function drag(e) {
+            if (!isDragging) return;
+            
+            e.preventDefault();
+            
+            let clientX, clientY;
+            if (e.type === 'touchmove') {
+                clientX = e.touches[0].clientX;
+                clientY = e.touches[0].clientY;
+            } else {
+                clientX = e.clientX;
+                clientY = e.clientY;
+            }
+            
+            const deltaX = clientX - initialX;
+            const deltaY = clientY - initialY;
+            
+            const newRight = -currentX - deltaX;
+            const newBottom = -currentY - deltaY;
+            
+            videoContainer.style.right = Math.max(10, Math.min(window.innerWidth - 200, newRight)) + 'px';
+            videoContainer.style.bottom = Math.max(10, Math.min(window.innerHeight - 100, newBottom)) + 'px';
+        }
+
+        function dragEnd() {
+            isDragging = false;
+            document.removeEventListener('mousemove', drag);
+            document.removeEventListener('touchmove', drag);
+            document.removeEventListener('mouseup', dragEnd);
+            document.removeEventListener('touchend', dragEnd);
+        }
+
+        // Click overlay to close (but not when clicking the video container)
+        document.getElementById('videoOverlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeVideo();
+            }
+        });
+
+        // Add keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeVideo();
+            } else if (e.key === 'm' || e.key === 'M') {
+                if (document.getElementById('videoPlayerContainer').classList.contains('active')) {
+                    toggleMinimize();
+                }
+            }
+        });
+
+        // Add some fun console messages
+        console.log('%c🔨 Welcome to Trevor\'s Construction Interview Academy! 🔨', 'color: #FFD700; font-size: 20px; font-weight: bold;');
+        console.log('%cRemember: Measure twice, interview once!', 'color: #FF6B35; font-size: 14px;');
+        console.log('%cPro tip: Press "M" to minimize video, "ESC" to close!', 'color: #3498db; font-size: 12px;');
+        
+        // Add a fun Easter egg
+        let clickCount = 0;
+        document.querySelector('.trevor').addEventListener('click', function() {
+            clickCount++;
+            const messages = [
+                "Hey, that tickles!",
+                "I'm Trevor, not a button!",
+                "Want to hear a construction joke? I'm still working on it!",
+                "Why did the construction worker bring a ladder? To reach new heights in his career!",
+                "Stop poking me and watch the videos!",
+                "Did you know? I once nailed an interview... literally!"
+            ];
+            
+            if (clickCount <= messages.length) {
+                const bubble = document.querySelector('.speech-text');
+                bubble.textContent = messages[clickCount - 1];
+                
+                if (clickCount === messages.length) {
+                    setTimeout(() => {
+                        bubble.textContent = "Okay okay, I'll reset now. Click the videos instead! 😄";
+                        clickCount = 0;
+                    }, 3000);
+                }
+            }
+        });
+
+        // Fun loading animation
+        window.addEventListener('load', function() {
+            const cards = document.querySelectorAll('.video-card');
+            cards.forEach((card, index) => {
+                card.style.animation = `fadeInUp 0.5s ${index * 0.1}s both`;
+            });
+        });
+
+        // Add the fadeInUp animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Prevent video from pausing when minimized
+        document.getElementById('videoPlayer').addEventListener('pause', function() {
+            // Could add auto-resume logic here if desired
+        });
+    </script>
+</body>
+</html>
