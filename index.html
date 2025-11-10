@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,41 +13,73 @@
         }
 
         @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
         @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         @keyframes swing {
-            0%, 100% { transform: rotate(-5deg); }
-            50% { transform: rotate(5deg); }
+
+            0%,
+            100% {
+                transform: rotate(-5deg);
+            }
+
+            50% {
+                transform: rotate(5deg);
+            }
         }
 
         @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.3;
+            }
         }
 
         @keyframes slideUp {
             from {
                 transform: translateY(100%);
             }
+
             to {
                 transform: translateY(0);
             }
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Comic Sans MS', 'Arial Rounded MT Bold', 'Trebuchet MS', Arial, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             position: relative;
@@ -71,11 +104,35 @@
             opacity: 0.2;
         }
 
-        .tool1 { top: 10%; left: 10%; animation-delay: 0s; }
-        .tool2 { top: 20%; right: 15%; animation-delay: 0.5s; }
-        .tool3 { bottom: 30%; left: 5%; animation-delay: 1s; }
-        .tool4 { bottom: 20%; right: 10%; animation-delay: 1.5s; }
-        .tool5 { top: 50%; left: 90%; animation-delay: 2s; }
+        .tool1 {
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .tool2 {
+            top: 20%;
+            right: 15%;
+            animation-delay: 0.5s;
+        }
+
+        .tool3 {
+            bottom: 30%;
+            left: 5%;
+            animation-delay: 1s;
+        }
+
+        .tool4 {
+            bottom: 20%;
+            right: 10%;
+            animation-delay: 1.5s;
+        }
+
+        .tool5 {
+            top: 50%;
+            left: 90%;
+            animation-delay: 2s;
+        }
 
         .container {
             max-width: 1200px;
@@ -97,13 +154,14 @@
             border-radius: 25px;
             padding: 30px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             margin-bottom: 30px;
             position: relative;
             border: 5px solid #FF6B35;
         }
 
-        .header::before, .header::after {
+        .header::before,
+        .header::after {
             content: "🚧";
             position: absolute;
             font-size: 2em;
@@ -132,7 +190,7 @@
         .subtitle {
             color: #34495E;
             font-size: 1.2em;
-            background: rgba(255,255,255,0.7);
+            background: rgba(255, 255, 255, 0.7);
             padding: 10px 20px;
             border-radius: 20px;
             display: inline-block;
@@ -173,7 +231,7 @@
             margin: 20px auto;
             max-width: 600px;
             position: relative;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
         .speech-bubble::after {
@@ -205,7 +263,7 @@
             background: linear-gradient(145deg, #FFFFFF, #F0F0F0);
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
             border: 3px solid #FF6B35;
@@ -214,7 +272,7 @@
 
         .video-card:hover {
             transform: translateY(-10px) rotate(1deg);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
         }
 
         .video-thumbnail {
@@ -235,13 +293,11 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: repeating-linear-gradient(
-                45deg,
-                transparent,
-                transparent 10px,
-                rgba(255,255,255,0.1) 10px,
-                rgba(255,255,255,0.1) 20px
-            );
+            background: repeating-linear-gradient(45deg,
+                    transparent,
+                    transparent 10px,
+                    rgba(255, 255, 255, 0.1) 10px,
+                    rgba(255, 255, 255, 0.1) 20px);
             animation: spin 20s linear infinite;
         }
 
@@ -280,13 +336,11 @@
         }
 
         .under-construction .video-thumbnail {
-            background: repeating-linear-gradient(
-                45deg,
-                #FFD700,
-                #FFD700 10px,
-                #000000 10px,
-                #000000 20px
-            );
+            background: repeating-linear-gradient(45deg,
+                    #FFD700,
+                    #FFD700 10px,
+                    #000000 10px,
+                    #000000 20px);
         }
 
         .under-construction .construction-icon {
@@ -306,7 +360,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.85);
+            background: rgba(0, 0, 0, 0.85);
             z-index: 999;
             animation: fadeIn 0.3s ease;
         }
@@ -328,7 +382,7 @@
             width: 900px;
             max-height: 90vh;
             z-index: 1000;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
             animation: slideUp 0.4s ease;
             overflow-y: auto;
         }
@@ -436,7 +490,7 @@
             text-align: center;
             margin-top: 50px;
             padding: 20px;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 20px;
             color: white;
         }
@@ -457,7 +511,7 @@
             h1 {
                 font-size: 1.8em;
             }
-            
+
             .video-grid {
                 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
                 gap: 15px;
@@ -496,6 +550,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Animated Background -->
     <div class="construction-bg">
@@ -520,8 +575,9 @@
             <div class="trevor"></div>
             <div class="speech-bubble">
                 <div class="speech-text">
-                    "Hey there, future Construction Broncos! I'm Trevor, your Future foreman and Construction Jesus if you are lucky! 
-                    Click on any video below to see what happens in real life construction interviews! 
+                    "Hey there, future Construction Broncos! I'm Trevor, your Future foreman and Construction Jesus if
+                    you are lucky!
+                    Click on any video below to see what happens in real life construction interviews!
                     Remember: We can fix buildings, but we can't fix bad first impressions! 😄"
                 </div>
             </div>
@@ -530,29 +586,34 @@
         <!-- Video Grid -->
         <div class="video-grid">
             <!-- Video 1 -->
-            <div class="video-card" onclick="playVideo('Interview01.mp4', 'Hours Per Week', 'Watch what happens when someone brings up hours per week in an interview!')">
+            <div class="video-card"
+                onclick="playVideo('interview01.mp4', 'Hours Per Week', 'Watch what happens when someone brings up hours per week in an interview!')">
                 <div class="video-thumbnail">
                     <span class="video-number">🎥 VIDEO Hours Per Week</span>
                 </div>
                 <div class="video-info">
                     <div class="video-title">Hours Per Week</div>
-                    <div class="video-description">Watch what happens when someone brings up hours per week in an interview!</div>
+                    <div class="video-description">Watch what happens when someone brings up hours per week in an
+                        interview!</div>
                 </div>
             </div>
 
             <!-- Video 2 -->
-            <div class="video-card" onclick="playVideo('Interview02.mp4', 'Heavy Equipment Operators', 'Find out what to do when you become certified as a Heavy Equipment Operator!')">
+            <div class="video-card"
+                onclick="playVideo('interview02.mp4', 'Heavy Equipment Operators', 'Find out what to do when you become certified as a Heavy Equipment Operator!')">
                 <div class="video-thumbnail">
                     <span class="video-number">🎥 VIDEO Heavy Equipment Operators</span>
                 </div>
                 <div class="video-info">
                     <div class="video-title">Heavy Equipment Operators</div>
-                    <div class="video-description">Find out what to do when you become certified as a Heavy Equipment Operator!</div>
+                    <div class="video-description">Find out what to do when you become certified as a Heavy Equipment
+                        Operator!</div>
                 </div>
             </div>
 
             <!-- Video 3 -->
-            <div class="video-card" onclick="playVideo('Interview03.mp4', 'When a coworker is late', 'Find out what Trevor says to do when a coworker is late...')">
+            <div class="video-card"
+                onclick="playVideo('interview03.mp4', 'When a coworker is late', 'Find out what Trevor says to do when a coworker is late...')">
                 <div class="video-thumbnail">
                     <span class="video-number">🎥 VIDEO When a coworker is late</span>
                 </div>
@@ -563,7 +624,8 @@
             </div>
 
             <!-- Video 4 -->
-            <div class="video-card" onclick="playVideo('Interview04.mp4', 'Going Home Early', 'What should you do if you want to leave early?')">
+            <div class="video-card"
+                onclick="playVideo('interview04.mp4', 'Going Home Early', 'What should you do if you want to leave early?')">
                 <div class="video-thumbnail">
                     <span class="video-number">🎥 VIDEO Going Home Early</span>
                 </div>
@@ -574,7 +636,8 @@
             </div>
 
             <!-- Video 5 -->
-            <div class="video-card" onclick="playVideo('Interview05.mp4', 'Critiquing a coworker', 'Learn the right way to give feedback on the job site.')">
+            <div class="video-card"
+                onclick="playVideo('interview05.mp4', 'Critiquing a coworker', 'Learn the right way to give feedback on the job site.')">
                 <div class="video-thumbnail">
                     <span class="video-number">🎥 VIDEO Critiquing a coworker</span>
                 </div>
@@ -585,13 +648,14 @@
             </div>
 
             <!-- Video 6 -->
-            <div class="video-card" onclick="playVideo('Interview06.mp4', 'How to stay safe in the summer Heat', 'How to stay safe in the summer Heat...')">
+            <div class="video-card"
+                onclick="playVideo('interview06.mp4', 'How to stay safe in the summer Heat', 'How to stay safe in the summer Heat...')">
                 <div class="video-thumbnail">
                     <span class="video-number">🎥 VIDEO How to stay safe in the summer Heat</span>
                 </div>
                 <div class="video-info">
                     <div class="video-title">How to stay safe in the summer Heat</div>
-                    <div class="video-description">How to stay safe in the Summer Heat on the job site.</div>
+                    <div class="video-description">How to stay safe in the summer Heat on the job site.</div>
                 </div>
             </div>
 
@@ -633,7 +697,7 @@
             <h2 style="color: #FFD700; margin-bottom: 10px;">🔨 Trevor's Golden Rules 🔨</h2>
             <p>✅ Always wear steel toe boots | ✅ Never talk, only nod | ✅ Leave home early</p>
             <p>✅ Grin (but not too much) | ✅ Know your measurements | ✅ Never say "That's not my job"</p>
-            <div class="safety-first">⚠️ SPEEED FIRST - SAFETY SECOND! ⚠️</div>
+            <div class="safety-first">⚠️ SAFETY FIRST - If I die on the job site, please place my PPE on me! ⚠️</div>
         </div>
     </div>
 
@@ -645,7 +709,8 @@
         <div class="video-header">
             <h3 id="videoTitle"></h3>
             <div class="video-controls">
-                <button class="control-btn minimize-btn" onclick="toggleMinimize()" title="Minimize to corner" id="minimizeBtn">
+                <button class="control-btn minimize-btn" onclick="toggleMinimize()" title="Minimize to corner"
+                    id="minimizeBtn">
                     <span id="minimizeIcon">−</span>
                 </button>
                 <button class="control-btn close-btn" onclick="closeVideo()" title="Close video">
@@ -675,20 +740,20 @@
             const titleElement = document.getElementById('videoTitle');
             const descriptionElement = document.getElementById('videoDescriptionText');
             const mainContainer = document.getElementById('mainContainer');
-            
+
             player.src = videoSrc;
             titleElement.textContent = title;
             descriptionElement.textContent = description;
-            
+
             overlay.classList.add('active');
             container.classList.add('active');
             mainContainer.classList.add('blurred');
-            
+
             // Reset minimized state
             isMinimized = false;
             container.classList.remove('minimized');
             document.getElementById('minimizeIcon').textContent = '−';
-            
+
             player.play();
         }
 
@@ -697,12 +762,12 @@
             const container = document.getElementById('videoPlayerContainer');
             const player = document.getElementById('videoPlayer');
             const mainContainer = document.getElementById('mainContainer');
-            
+
             overlay.classList.remove('active');
             container.classList.remove('active');
             container.classList.remove('minimized');
             mainContainer.classList.remove('blurred');
-            
+
             player.pause();
             player.src = '';
             isMinimized = false;
@@ -713,9 +778,9 @@
             const overlay = document.getElementById('videoOverlay');
             const mainContainer = document.getElementById('mainContainer');
             const minimizeIcon = document.getElementById('minimizeIcon');
-            
+
             isMinimized = !isMinimized;
-            
+
             if (isMinimized) {
                 container.classList.add('minimized');
                 overlay.classList.remove('active');
@@ -740,9 +805,9 @@
 
         function dragStart(e) {
             if (!isMinimized) return;
-            
+
             isDragging = true;
-            
+
             if (e.type === 'touchstart') {
                 initialX = e.touches[0].clientX;
                 initialY = e.touches[0].clientY;
@@ -750,11 +815,11 @@
                 initialX = e.clientX;
                 initialY = e.clientY;
             }
-            
+
             const rect = videoContainer.getBoundingClientRect();
             currentX = rect.right - window.innerWidth;
             currentY = rect.bottom - window.innerHeight;
-            
+
             document.addEventListener('mousemove', drag);
             document.addEventListener('touchmove', drag);
             document.addEventListener('mouseup', dragEnd);
@@ -763,9 +828,9 @@
 
         function drag(e) {
             if (!isDragging) return;
-            
+
             e.preventDefault();
-            
+
             let clientX, clientY;
             if (e.type === 'touchmove') {
                 clientX = e.touches[0].clientX;
@@ -774,13 +839,13 @@
                 clientX = e.clientX;
                 clientY = e.clientY;
             }
-            
+
             const deltaX = clientX - initialX;
             const deltaY = clientY - initialY;
-            
+
             const newRight = -currentX - deltaX;
             const newBottom = -currentY - deltaY;
-            
+
             videoContainer.style.right = Math.max(10, Math.min(window.innerWidth - 200, newRight)) + 'px';
             videoContainer.style.bottom = Math.max(10, Math.min(window.innerHeight - 100, newBottom)) + 'px';
         }
@@ -794,14 +859,14 @@
         }
 
         // Click overlay to close (but not when clicking the video container)
-        document.getElementById('videoOverlay').addEventListener('click', function(e) {
+        document.getElementById('videoOverlay').addEventListener('click', function (e) {
             if (e.target === this) {
                 closeVideo();
             }
         });
 
         // Add keyboard navigation
-        document.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape') {
                 closeVideo();
             } else if (e.key === 'm' || e.key === 'M') {
@@ -815,10 +880,10 @@
         console.log('%c🔨 Welcome to Trevor\'s Construction Interview Academy! 🔨', 'color: #FFD700; font-size: 20px; font-weight: bold;');
         console.log('%cRemember: Measure twice, interview once!', 'color: #FF6B35; font-size: 14px;');
         console.log('%cPro tip: Press "M" to minimize video, "ESC" to close!', 'color: #3498db; font-size: 12px;');
-        
+
         // Add a fun Easter egg
         let clickCount = 0;
-        document.querySelector('.trevor').addEventListener('click', function() {
+        document.querySelector('.trevor').addEventListener('click', function () {
             clickCount++;
             const messages = [
                 "Hey, that tickles!",
@@ -828,11 +893,11 @@
                 "Stop poking me and watch the videos!",
                 "Did you know? I once nailed an interview... literally!"
             ];
-            
+
             if (clickCount <= messages.length) {
                 const bubble = document.querySelector('.speech-text');
                 bubble.textContent = messages[clickCount - 1];
-                
+
                 if (clickCount === messages.length) {
                     setTimeout(() => {
                         bubble.textContent = "Okay okay, I'll reset now. Click the videos instead! 😄";
@@ -843,7 +908,7 @@
         });
 
         // Fun loading animation
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
             const cards = document.querySelectorAll('.video-card');
             cards.forEach((card, index) => {
                 card.style.animation = `fadeInUp 0.5s ${index * 0.1}s both`;
@@ -867,7 +932,7 @@
         document.head.appendChild(style);
 
         // Prevent video from pausing when minimized
-        document.getElementById('videoPlayer').addEventListener('pause', function() {
+        document.getElementById('videoPlayer').addEventListener('pause', function () {
             // Could add auto-resume logic here if desired
         });
     </script>
